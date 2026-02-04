@@ -1,0 +1,1344 @@
+/* ANONYMT UTDANNINGSFORUM - GLOBAL STYLESHEET
+   Fase 1 */
+
+/* Nullstilling */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* CSS-variabler for rollebaserte farger */
+:root {
+    /* Standard/gjest farger */
+    --farge-hoved: #2c3e50;
+    --farge-aksent: #3498db;
+    --farge-bakgrunn: #f5f5f5;
+    --farge-tekst: #2c3e50;
+    --farge-gradient: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+/* Student farger */
+body.rolle-student {
+    --farge-hoved: #2c3e50;
+    --farge-aksent: #3498db;
+    --farge-bakgrunn: #f5f5f5;
+    --farge-tekst: #2c3e50;
+    --farge-gradient: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+/* Foreleser farger */
+body.rolle-foreleser {
+    --farge-hoved: #27ae60;
+    --farge-aksent: #2ecc71;
+    --farge-bakgrunn: #f0f8f4;
+    --farge-tekst: #2c3e50;
+    --farge-gradient: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+/* Admin farger */
+body.rolle-admin {
+    --farge-hoved: #c0392b;
+    --farge-aksent: #e74c3c;
+    --farge-bakgrunn: #1a1a2e;
+    --farge-tekst: #eaeaea;
+    --farge-gradient: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+/* GRUNNLEGGENDE LAYOUT */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--farge-bakgrunn);
+    color: var(--farge-tekst);
+    min-height: 100vh;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGASJON */
+
+.hovednavigasjon {
+    background-color: var(--farge-hoved);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hovednavigasjon h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hovednavigasjon h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hovednavigasjon ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-knapp {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-knapp:hover,
+.nav-knapp:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* KNAPPER */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--farge-aksent);
+    color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--farge-hoved);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: #ffffff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #7f8c8d;
+}
+
+.btn-suksess {
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+.btn-suksess:hover {
+    background-color: #219a52;
+}
+
+.btn-fare {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-fare:hover {
+    background-color: #c0392b;
+}
+
+.btn-registrer {
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+.btn-registrer:hover {
+    background-color: #219a52;
+}
+
+.btn-logginn {
+    background-color: var(--farge-aksent);
+    color: #ffffff;
+}
+
+.btn-logginn:hover {
+    background-color: var(--farge-hoved);
+}
+
+.btn-loggut {
+    background-color: #4a4a6a;
+    color: #ffffff;
+}
+
+.btn-loggut:hover {
+    background-color: var(--farge-aksent);
+}
+
+.btn-send {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    background-color: var(--farge-aksent);
+    color: #ffffff;
+}
+
+.btn-send:hover {
+    background-color: var(--farge-hoved);
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+/* CONTAINER & LAYOUT */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container-smal {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hovedinnhold {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* KORT (CARDS) */
+
+.kort {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.kort-header {
+    border-bottom: 2px solid var(--farge-aksent);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.kort-header h2 {
+    color: var(--farge-hoved);
+    font-size: 1.5rem;
+}
+
+.kort-innhold {
+    padding: 1rem 0;
+}
+
+/* Dashboard layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: calc(100vh - 70px);
+}
+
+.sidemeny {
+    background-color: #16213e;
+    padding: 1.5rem;
+    border-right: 1px solid #2a2a4a;
+}
+
+.sidemeny h3 {
+    color: #7f8c8d;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.sidemeny ul {
+    list-style: none;
+}
+
+.sidemeny li {
+    margin-bottom: 0.5rem;
+}
+
+.sidemeny a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #eaeaea;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.sidemeny a:hover,
+.sidemeny a.active {
+    background-color: var(--farge-aksent);
+    color: #ffffff;
+}
+
+/* Admin dashboard velkomst */
+.velkomst {
+    margin-bottom: 2rem;
+}
+
+.velkomst h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.velkomst p {
+    color: #7f8c8d;
+}
+
+/* Hurtighandlinger */
+.hurtighandlinger {
+    margin-bottom: 2rem;
+}
+
+.hurtighandlinger h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.handlinger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.handling-kort {
+    background-color: #16213e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #2a2a4a;
+    text-decoration: none;
+    color: #eaeaea;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.handling-kort:hover {
+    border-color: var(--farge-aksent);
+    transform: translateY(-2px);
+}
+
+.handling-kort h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.handling-kort p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Statistikk kort */
+.statistikk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statistikk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-kort {
+    background: var(--farge-gradient);
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-tall {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-tekst {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* SKJEMAER */
+
+.skjema-seksjon {
+    background-color: #ffffff;
+}
+
+.skjema-gruppe {
+    margin-bottom: 1.5rem;
+}
+
+.skjema-gruppe label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--farge-hoved);
+}
+
+.skjema-gruppe input,
+.skjema-gruppe textarea,
+.skjema-gruppe select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.skjema-gruppe input:focus,
+.skjema-gruppe textarea:focus,
+.skjema-gruppe select:focus {
+    outline: none;
+    border-color: var(--farge-aksent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.skjema-gruppe textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.skjema-hjelp {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin-top: 0.25rem;
+}
+
+/* Admin dashboard stat-kort modifikasjoner */
+.stat-kort h3 {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-kort .tall {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--farge-aksent);
+}
+
+.stat-kort.studenter .tall { color: #3498db; }
+.stat-kort.forelesere .tall { color: #27ae60; }
+.stat-kort.meldinger .tall { color: #f39c12; }
+.stat-kort.rapporter .tall { color: var(--farge-aksent); }
+
+/* Admin stat-kort skal være hvit, ikke rød */
+body.rolle-admin .stat-kort {
+    background: #ffffff;
+    color: #2c3e50;
+    border: 1px solid #ecf0f1;
+}
+
+/* SKJEMAER */
+
+.skjema-gruppe {
+    margin-bottom: 1.5rem;
+}
+
+.skjema-gruppe label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--farge-hoved);
+}
+
+.skjema-gruppe input,
+.skjema-gruppe textarea,
+.skjema-gruppe select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.skjema-gruppe input:focus,
+.skjema-gruppe textarea:focus,
+.skjema-gruppe select:focus {
+    outline: none;
+    border-color: var(--farge-aksent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.skjema-gruppe textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.skjema-hjelp {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin-top: 0.25rem;
+}
+
+/* MELDINGER (ALERTS) */
+
+.melding {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+}
+
+.melding-suksess {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.melding-feil {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.melding-info {
+    background-color: #d1ecf1;
+    border-color: #17a2b8;
+    color: #0c5460;
+}
+
+.melding-advarsel {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+}
+
+/* Alternative class names for compatibility */
+.melding.suksess {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.melding.feil {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* TABELL */
+
+.tabell {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabell thead {
+    background-color: var(--farge-hoved);
+    color: #ffffff;
+}
+
+.tabell th,
+.tabell td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.tabell tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.tabell tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* MELDINGER (MESSAGES/CARDS) */
+
+.meldinger-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.melding-kort {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.melding-header {
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.melding-innhold {
+    padding: 1.5rem;
+}
+
+.melding-innhold h3 {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.melding-innhold p {
+    color: #2c3e50;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.melding-meta {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+.melding-dato {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+.melding-handlinger {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.melding-svar {
+    background-color: #e8f6f3;
+    padding: 1.5rem;
+    border-left: 4px solid #27ae60;
+}
+
+.melding-svar .svar-label {
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.melding-svar p {
+    color: #2c3e50;
+    line-height: 1.7;
+}
+
+.melding-utdrag {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.emne-badge {
+    background-color: #8e44ad;
+    color: #ffffff;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   ELEMENT STYLING
+   ============================================================================ */
+
+.element {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.element:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.element-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.element-tittel {
+    font-weight: bold;
+    color: var(--farge-hoved);
+    font-size: 1.1rem;
+}
+
+.element-meta {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+}
+
+.element-innhold {
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* BADGE & LABELS */
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.badge-student {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.badge-foreleser {
+    background-color: #9b59b6;
+    color: #ffffff;
+}
+
+.badge-admin {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* HJELPEKLASSER */
+
+.tekst-senter {
+    text-align: center;
+}
+
+.tekst-høyre {
+    text-align: right;
+}
+
+.margin-bunn {
+    margin-bottom: 1rem;
+}
+
+.margin-bunn-stor {
+    margin-bottom: 2rem;
+}
+
+.ingen-margin {
+    margin: 0;
+}
+
+.skjult {
+    display: none;
+}
+
+/* FOOTER */
+
+.sidefot {
+    background-color: var(--farge-hoved);
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.sidefot a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* RESPONSIVT DESIGN */
+
+.side-header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.side-header h1,
+.side-header h2 {
+    font-size: 1.8rem;
+    color: var(--farge-hoved);
+}
+
+.side-header p {
+    color: #7f8c8d;
+}
+
+/* =====================================================
+   INDEX / LANDINGSSIDE STYLING
+   ===================================================== */
+
+.hero {
+    background: var(--farge-gradient);
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.pin-seksjon {
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pin-seksjon h3 {
+    color: var(--farge-hoved);
+    margin-bottom: 0.5rem;
+}
+
+.pin-seksjon p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.pin-seksjon form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pin-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.pin-input:focus {
+    outline: none;
+    border-color: var(--farge-aksent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.info-seksjon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+}
+
+.info-seksjon article {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-seksjon article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.info-seksjon h3 {
+    color: var(--farge-hoved);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-seksjon p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.info-seksjon a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--farge-aksent);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.info-seksjon a:hover {
+    background-color: var(--farge-hoved);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =====================================================
+   LOGIN & REGISTRERING SIDER
+   ===================================================== */
+
+.login-boks,
+.register-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin mørk tema for login/registrering */
+body.rolle-admin .login-boks,
+body.rolle-admin .register-container,
+body.rolle-admin .registrer-boks {
+    background-color: #16213e;
+    border: 1px solid #2a2a4a;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+body.rolle-admin .login-boks h2,
+body.rolle-admin .register-container h2,
+body.rolle-admin .registrer-boks h2 {
+    color: #ffffff;
+}
+
+body.rolle-admin .login-boks p,
+body.rolle-admin .register-container p.subtittel,
+body.rolle-admin .registrer-boks p {
+    color: #b0b0b0;
+}
+
+body.rolle-admin .form-gruppe label,
+body.rolle-admin .skjema-gruppe label {
+    color: #ffffff;
+}
+
+body.rolle-admin .form-gruppe input,
+body.rolle-admin .form-gruppe textarea,
+body.rolle-admin .form-gruppe select,
+body.rolle-admin .skjema-gruppe input,
+body.rolle-admin .skjema-gruppe textarea,
+body.rolle-admin .skjema-gruppe select {
+    background-color: #1a1a2e;
+    border-color: #2a2a4a;
+    color: #ffffff;
+}
+
+body.rolle-admin .form-gruppe input:focus,
+body.rolle-admin .form-gruppe textarea:focus,
+body.rolle-admin .form-gruppe select:focus,
+body.rolle-admin .skjema-gruppe input:focus,
+body.rolle-admin .skjema-gruppe textarea:focus,
+body.rolle-admin .skjema-gruppe select:focus {
+    border-color: var(--farge-aksent);
+    background-color: #16213e;
+}
+
+body.rolle-admin .ekstra-lenker p {
+    color: #b0b0b0;
+}
+
+body.rolle-admin .form-seksjon {
+    border-bottom-color: #2a2a4a;
+}
+
+body.rolle-admin .form-seksjon h3 {
+    color: #ffffff;
+}
+
+.login-boks h2,
+.register-container h2 {
+    color: var(--farge-hoved);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.login-boks p,
+.register-container p.subtittel {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.rolle-velger {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.rolle-velger a {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #7f8c8d;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.rolle-velger a:hover {
+    color: var(--farge-hoved);
+    background-color: #f8f9fa;
+}
+
+.rolle-velger a.aktiv-student {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+.rolle-velger a.aktiv-foreleser {
+    color: #27ae60;
+    border-bottom-color: #27ae60;
+}
+
+.rolle-velger a.aktiv-admin {
+    color: #e74c3c;
+    border-bottom-color: #e74c3c;
+}
+
+.form-seksjon {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.form-seksjon:last-of-type {
+    border-bottom: none;
+}
+
+.form-seksjon h3 {
+    color: var(--farge-hoved);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.form-gruppe {
+    margin-bottom: 1.5rem;
+}
+
+.form-gruppe label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--farge-hoved);
+}
+
+.form-gruppe input,
+.form-gruppe textarea,
+.form-gruppe select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-gruppe input:focus,
+.form-gruppe textarea:focus,
+.form-gruppe select:focus {
+    outline: none;
+    border-color: var(--farge-aksent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-gruppe textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-gruppe .hjelp,
+.form-gruppe p.hjelp {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin-top: 0.25rem;
+}
+
+.ekstra-lenker {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.ekstra-lenker p {
+    margin: 0.5rem 0;
+    color: #7f8c8d;
+}
+
+.ekstra-lenker a {
+    color: var(--farge-aksent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ekstra-lenker a:hover {
+    text-decoration: underline;
+}
+
+/* Info-bokser */
+.info-boks {
+    background-color: #f3e5f5;
+    border: 1px solid #ce93d8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-boks h4 {
+    color: #7b1fa2;
+    margin-bottom: 0.5rem;
+}
+
+.info-boks p {
+    color: #6a1b9a;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* =====================================================
+   EMNE-VISNING / FORUM
+   ===================================================== */
+
+.emne-header {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.emne-info .emnekode {
+    display: inline-block;
+    background: var(--farge-gradient);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.emne-info h2 {
+    color: var(--farge-hoved);
+    margin: 0.5rem 0;
+}
+
+.emne-info p {
+    color: #7f8c8d;
+    margin: 0.5rem 0 0 0;
+}
+
+.meldinger-seksjon {
+    margin-bottom: 2rem;
+}
+
+.meldinger-seksjon h3 {
+    color: var(--farge-hoved);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--farge-aksent);
+}
+
+.melding-kort {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.melding-kort .melding-header {
+    background-color: #f8f9fa;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.melding-fra {
+    font-weight: 600;
+    color: var(--farge-hoved);
+}
+
+.melding-dato {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.melding-innhold {
+    padding: 1.5rem;
+}
+
+.melding-innhold p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.svar-seksjon {
+    background-color: #e8f5e9;
+    border-top: 2px solid #4caf50;
+    padding: 1.5rem;
+}
+
+.svar-seksjon.venter {
+    background-color: #fff3e0;
+    border-top-color: #ff9800;
+}
+
+.svar-header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.svar-header span {
+    color: #7f8c8d;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.svar-innhold p {
+    color: #1b5e20;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.venter-tekst {
+    color: #e65100;
+    font-style: italic;
+    margin: 0;
+}
+
+.ingen-innhold {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ingen-innhold p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+/* RESPONSIVT DESIGN */
+
+@media (max-width: 768px) {
+    .hovednavigasjon {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .statistikk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container,
+    .container-smal {
+        padding: 1rem;
+    }
+
+    .tabell {
+        font-size: 0.875rem;
+    }
+
+    .tabell th,
+    .tabell td {
+        padding: 0.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-seksjon {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .kort {
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .pin-input {
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+    }
+}
